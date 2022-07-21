@@ -27,10 +27,8 @@ export const Login = () => {
 
   const onSubmit = () => {
     const { username, password } = getValues();
-    const { username: dbUsername, password: dbPw } = userDb;
     const correctUsername = userDb.filter((username) => username === username);
     const correctPw = userDb.filter((password) => password === password);
-    console.log(username === dbUsername && password === dbPw);
 
     if (username !== correctUsername[0].username) {
       setError("usernameResult", { message: "아이디가 틀렸습니다" });
